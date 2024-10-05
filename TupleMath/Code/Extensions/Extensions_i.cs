@@ -265,19 +265,18 @@ public static class Extensions_i
 	#region Conversion
 #pragma warning disable IDE0004   // Remove unnecessary cast
 
-	[MethodImpl(Inline)]
+	[MethodImpl(Inline), Vectorize]
 	public static b ToBool(this i @this)
 		=> @this > 0;
-	[MethodImpl(Inline)]
 	private static i ToInt(this i @this)
 		=> @this;
-	[MethodImpl(Inline)]
+	[MethodImpl(Inline), Vectorize]
 	public static l ToLong(this i @this)
 		=> (l)@this;
-	[MethodImpl(Inline)]
+	[MethodImpl(Inline), Vectorize]
 	public static f ToFloat(this i @this)
 		=> (f)@this;
-	[MethodImpl(Inline)]
+	[MethodImpl(Inline), Vectorize]
 	public static d ToDouble(this i @this)
 		=> (d)@this;
 

@@ -33,19 +33,18 @@ public static class Extensions_b
 
 	#region Conversion
 
-	[MethodImpl(Inline)]
 	private static b ToBool(this b @this)
 		=> @this;
-	[MethodImpl(Inline)]
+	[MethodImpl(Inline), Vectorize]
 	public static i ToInt(this b @this)
 		=> @this ? 1 : 0;
-	[MethodImpl(Inline)]
+	[MethodImpl(Inline), Vectorize]
 	public static l ToLong(this b @this)
 		=> @this ? 1L : 0L;
-	[MethodImpl(Inline)]
+	[MethodImpl(Inline), Vectorize]
 	public static f ToFloat(this b @this)
 		=> @this ? 1f : 0f;
-	[MethodImpl(Inline)]
+	[MethodImpl(Inline), Vectorize]
 	public static d ToDouble(this b @this)
 		=> @this ? 1d : 0d;
 

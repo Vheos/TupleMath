@@ -244,19 +244,18 @@ public static class Extensions_f
 	#endregion
 
 	#region Conversion
-	[MethodImpl(Inline)]
+	[MethodImpl(Inline), Vectorize]
 	public static b ToBool(this f @this)
 		=> @this > 0f;
-	[MethodImpl(Inline)]
+	[MethodImpl(Inline), Vectorize]
 	public static i ToInt(this f @this)
 		=> (i)@this;
-	[MethodImpl(Inline)]
+	[MethodImpl(Inline), Vectorize]
 	public static l ToLong(this f @this)
 		=> (l)@this;
-	[MethodImpl(Inline)]
 	private static f ToFloat(this f @this)
 		=> @this;
-	[MethodImpl(Inline)]
+	[MethodImpl(Inline), Vectorize]
 	public static d ToDouble(this f @this)
 		=> (d)@this;
 
