@@ -50,6 +50,7 @@ public static class Extensions_g2
 
 	#region Components
 
+	// 2^2 = 4
 	[MethodImpl(Inline)]
 	public static (g X, g Y) XX<g>(this (g X, g Y) @this)
 		=> (@this.X, @this.X);
@@ -62,6 +63,35 @@ public static class Extensions_g2
 	[MethodImpl(Inline)]
 	public static (g X, g Y) YY<g>(this (g X, g Y) @this)
 		=> (@this.Y, @this.Y);
+
+	// 2^3 = 8
+	[MethodImpl(Inline)]
+	public static (g X, g Y, g Z) XXX<g>(this (g X, g Y) @this)
+		=> (@this.X, @this.X, @this.X);
+	[MethodImpl(Inline)]
+	public static (g X, g Y, g Z) XXY<g>(this (g X, g Y) @this)
+		=> (@this.X, @this.X, @this.Y);
+	[MethodImpl(Inline)]
+	public static (g X, g Y, g Z) XYX<g>(this (g X, g Y) @this)
+		=> (@this.X, @this.Y, @this.X);
+	[MethodImpl(Inline)]
+	public static (g X, g Y, g Z) XYY<g>(this (g X, g Y) @this)
+		=> (@this.X, @this.Y, @this.Y);
+	[MethodImpl(Inline)]
+	public static (g X, g Y, g Z) YXX<g>(this (g X, g Y) @this)
+		=> (@this.Y, @this.X, @this.X);
+	[MethodImpl(Inline)]
+	public static (g X, g Y, g Z) YXY<g>(this (g X, g Y) @this)
+		=> (@this.Y, @this.X, @this.Y);
+	[MethodImpl(Inline)]
+	public static (g X, g Y, g Z) YYX<g>(this (g X, g Y) @this)
+		=> (@this.Y, @this.Y, @this.X);
+	[MethodImpl(Inline)]
+	public static (g X, g Y, g Z) YYY<g>(this (g X, g Y) @this)
+		=> (@this.Y, @this.Y, @this.Y);
+
+	// 2^4 = 16
+	// TODO
 
 	#endregion
 }

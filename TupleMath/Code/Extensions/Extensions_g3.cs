@@ -41,6 +41,40 @@ public static class Extensions_g3
 
 	#region Components
 
+	// 3^2 = 9
+	[MethodImpl(Inline)]
+	public static (g X, g Y) XX<g>(this (g X, g Y, g Z) @this)
+		=> (@this.X, @this.X);
+	[MethodImpl(Inline)]
+	public static (g X, g Y) XY<g>(this (g X, g Y, g Z) @this)
+		=> (@this.X, @this.Y);
+	[MethodImpl(Inline)]
+	public static (g X, g Y) XZ<g>(this (g X, g Y, g Z) @this)
+		=> (@this.X, @this.Z);
+	[MethodImpl(Inline)]
+	public static (g X, g Y) YX<g>(this (g X, g Y, g Z) @this)
+		=> (@this.Y, @this.X);
+	[MethodImpl(Inline)]
+	public static (g X, g Y) YY<g>(this (g X, g Y, g Z) @this)
+		=> (@this.Y, @this.Y);
+	[MethodImpl(Inline)]
+	public static (g X, g Y) YZ<g>(this (g X, g Y, g Z) @this)
+		=> (@this.Y, @this.Z);
+	[MethodImpl(Inline)]
+	public static (g X, g Y) ZX<g>(this (g X, g Y, g Z) @this)
+		=> (@this.Z, @this.X);
+	[MethodImpl(Inline)]
+	public static (g X, g Y) ZY<g>(this (g X, g Y, g Z) @this)
+		=> (@this.Z, @this.Y);
+	[MethodImpl(Inline)]
+	public static (g X, g Y) ZZ<g>(this (g X, g Y, g Z) @this)
+		=> (@this.Z, @this.Z);
+
+	// 3^3 = 27
+	// TODO
+
+	// 3^4 = 81
+	// TODO
 
 	#endregion
 }
