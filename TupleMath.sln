@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34714.143
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TupleMath", "TupleMath\TupleMath.csproj", "{E53159DD-47F7-4678-B2CA-1989CEA60A54}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TupleMathGenerator", "TupleMathGenerator\TupleMathGenerator.csproj", "{2ECA1A71-B062-4D9A-B52D-F5618E79D23D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E53159DD-47F7-4678-B2CA-1989CEA60A54}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E53159DD-47F7-4678-B2CA-1989CEA60A54}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E53159DD-47F7-4678-B2CA-1989CEA60A54}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E53159DD-47F7-4678-B2CA-1989CEA60A54}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2ECA1A71-B062-4D9A-B52D-F5618E79D23D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2ECA1A71-B062-4D9A-B52D-F5618E79D23D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2ECA1A71-B062-4D9A-B52D-F5618E79D23D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2ECA1A71-B062-4D9A-B52D-F5618E79D23D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {42ED2859-73AD-4292-B0A4-50912D80D74B}
+	EndGlobalSection
+EndGlobal
