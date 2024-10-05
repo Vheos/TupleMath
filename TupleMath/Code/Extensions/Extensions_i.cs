@@ -196,11 +196,11 @@ public static class Extensions_i
 	#region Trigonometric
 
 	[MethodImpl(Inline), Vectorize]
-	public static f ToRad(this i @this)
-		=> @this.ToFloat().ToRad();
+	public static f DegToRad(this i @this)
+		=> @this.ToFloat().DegToRad();
 	[MethodImpl(Inline), Vectorize]
-	public static f ToDeg(this i @this)
-		=> @this.ToFloat().ToDeg();
+	public static f RadToDeg(this i @this)
+		=> @this.ToFloat().RadToDeg();
 
 	[MethodImpl(Inline), Vectorize]
 	public static f Sin(this i @this)

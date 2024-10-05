@@ -177,10 +177,10 @@ public static class Extensions_f
 	#region Trigonometric
 
 	[MethodImpl(Inline), Vectorize]
-	public static f ToRad(this f @this)
+	public static f DegToRad(this f @this)
 		=> @this * FloatDegToRad;
 	[MethodImpl(Inline), Vectorize]
-	public static f ToDeg(this f @this)
+	public static f RadToDeg(this f @this)
 		=> @this / FloatDegToRad;
 
 	[MethodImpl(Inline), Vectorize]
