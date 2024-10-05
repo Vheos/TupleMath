@@ -3,22 +3,28 @@ namespace TupleMath;
 
 public static class Extensions_b
 {
-	#region Operators
+	#region Gates
 
-	[MethodImpl(Inline)]
+	[MethodImpl(Inline), Vectorize]
 	public static b Not(this b @this)
 		=> !@this;
-	[MethodImpl(Inline)]
+	[MethodImpl(Inline), Vectorize]
 	public static b And(this b @this, b a)
 		=> @this && a;
-	[MethodImpl(Inline)]
+	[MethodImpl(Inline), Vectorize]
+	public static b Nand(this b @this, b a)
+		=> !@this || !a;
+	[MethodImpl(Inline), Vectorize]
 	public static b Or(this b @this, b a)
 		=> @this || a;
-	[MethodImpl(Inline)]
+	[MethodImpl(Inline), Vectorize]
+	public static b Nor(this b @this, b a)
+		=> !@this && !a;
+	[MethodImpl(Inline), Vectorize]
 	public static b Xor(this b @this, b a)
 		=> @this ^ a;
 
-	[MethodImpl(Inline)]
+	[MethodImpl(Inline), Vectorize]
 	public static b IsEqual(this b @this, b a)
 		=> @this == a;
 

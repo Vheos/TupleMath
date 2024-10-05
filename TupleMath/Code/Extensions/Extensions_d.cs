@@ -2,20 +2,20 @@
 
 public static class Extensions_d
 {
-	[MethodImpl(Inline)]
+	[MethodImpl(Inline), Vectorize]
 	public static d Inv(this d @this)
 		=> 1d / @this;
 
-	[MethodImpl(Inline)]
+	[MethodImpl(Inline), Vectorize]
 	public static d Pow(this d @this, d a)
 		=> Math.Pow(@this, a);
-	[MethodImpl(Inline)]
+	[MethodImpl(Inline), Vectorize]
 	public static d Root(this d @this, d a)
 		=> @this.Pow(a.Inv());
-	[MethodImpl(Inline)]
+	[MethodImpl(Inline), Vectorize]
 	public static d Sqrt(this d @this)
 		=> Math.Sqrt(@this);
-	[MethodImpl(Inline)]
+	[MethodImpl(Inline), Vectorize]
 	public static d Sqrd(this d @this)
 		=> @this * @this;
 
