@@ -1,6 +1,6 @@
-﻿namespace TupleMath.Generators.Shared;
+﻿namespace TupleMathGenerator.Shared;
 using System.Text;
-using TupleMath.Generators.Extensions;
+using TupleMathGenerator.Extensions;
 
 [Generator]
 internal class Shared : IIncrementalGenerator
@@ -14,7 +14,7 @@ internal class Shared : IIncrementalGenerator
 	// Settings
 	internal const string IgnoreAttributeShortName = "Ignore"; 
 	internal const string AttributesFilePath = "Attributes";
-	internal const string AttributesNamespace = $"{nameof(TupleMath)}.{nameof(Generators)}.{AttributesFilePath}";
+	internal const string AttributesNamespace = $"{nameof(TupleMathGenerator)}.{AttributesFilePath}";
 	internal const string TypeAliasesFilePath = "TypeAliases";
 	internal static readonly IReadOnlyDictionary<string, Type> TypesByAlias = new Dictionary<string, Type>()
 	{

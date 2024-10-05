@@ -1,4 +1,4 @@
-﻿namespace TupleMath.Generators.Retype;
+﻿namespace TupleMathGenerator.Retype;
 using System;
 
 [AttributeUsage(AttributeTargets.Method, AllowMultiple = true)]

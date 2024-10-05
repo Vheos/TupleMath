@@ -1,4 +1,4 @@
-﻿namespace TupleMath.Generators.Shared;
+﻿namespace TupleMathGenerator.Shared;
 using System;
 
 [AttributeUsage(AttributeTargets.Parameter)]

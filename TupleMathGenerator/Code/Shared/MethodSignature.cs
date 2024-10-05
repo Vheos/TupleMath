@@ -1,4 +1,4 @@
-﻿namespace TupleMath.Generators.Shared;
+﻿namespace TupleMathGenerator.Shared;
 
 public readonly struct MethodSignature : IEquatable<MethodSignature>
 {

@@ -1,12 +1,12 @@
-﻿namespace TupleMath.Generators.Vectorize;
+﻿namespace TupleMathGenerator.Vectorize;
 using Microsoft.CodeAnalysis;
 using System.Collections.Immutable;
 using System.ComponentModel;
 using System.IO;
 using System.Text;
 using System.Threading;
-using TupleMath.Generators.Extensions;
-using TupleMath.Generators.Shared;
+using TupleMathGenerator.Extensions;
+using TupleMathGenerator.Shared;
 
 [Generator]
 public class Vectorize : IIncrementalGenerator

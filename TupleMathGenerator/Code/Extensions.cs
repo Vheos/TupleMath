@@ -1,8 +1,8 @@
-﻿namespace TupleMath.Generators.Extensions;
+﻿namespace TupleMathGenerator.Extensions;
 using System;
 using System.IO;
 using System.Threading;
-using TupleMath.Generators.Shared;
+using TupleMathGenerator.Shared;
 
 public static class Extensions
 {

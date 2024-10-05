@@ -1,4 +1,4 @@
-﻿namespace TupleMath.Generators.Vectorize;
+﻿namespace TupleMathGenerator.Vectorize;
 using System;
 
 [AttributeUsage(AttributeTargets.Method)]

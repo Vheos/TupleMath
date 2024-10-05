@@ -1,9 +1,9 @@
-﻿namespace TupleMath.Generators.ExtraPass;
+﻿namespace TupleMathGenerator.ExtraPass;
 using System.IO;
 using System.Threading;
-using TupleMath.Generators.Extensions;
-using TupleMath.Generators.Retype;
-using TupleMath.Generators.Vectorize;
+using TupleMathGenerator.Extensions;
+using TupleMathGenerator.Retype;
+using TupleMathGenerator.Vectorize;
 
 [Generator]
 public class ExtraPass : IIncrementalGenerator

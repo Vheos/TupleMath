@@ -1,4 +1,4 @@
-﻿namespace TupleMath.Generators.Retype;
+﻿namespace TupleMathGenerator.Retype;
 
 [Flags]
 public enum ConversionTargets

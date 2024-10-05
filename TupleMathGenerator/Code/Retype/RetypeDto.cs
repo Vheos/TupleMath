@@ -1,5 +1,5 @@
-﻿namespace TupleMath.Generators.Retype;
-using TupleMath.Generators.Shared;
+﻿namespace TupleMathGenerator.Retype;
+using TupleMathGenerator.Shared;
 
 public struct RetypeDto(MethodDeclarationSyntax method) : IEquatable<RetypeDto>
 {

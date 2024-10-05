@@ -1,9 +1,9 @@
-﻿namespace TupleMath.Generators.Retype;
+﻿namespace TupleMathGenerator.Retype;
 using System.Collections.Immutable;
 using System.IO;
 using System.Threading;
-using TupleMath.Generators.Extensions;
-using TupleMath.Generators.Shared;
+using TupleMathGenerator.Extensions;
+using TupleMathGenerator.Shared;
 
 [Generator]
 public class Retype : IIncrementalGenerator
