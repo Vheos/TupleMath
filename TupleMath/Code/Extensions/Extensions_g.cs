@@ -12,14 +12,8 @@ public static class Extensions_g
 	public static (g X, g Y, g Z) Append<g>(this g @this, (g X, g Y) a)
 		=> (@this, a.X, a.Y);
 	[MethodImpl(Inline)]
-	public static (g X, g Y, g Z) Append<g>(this g @this, g y, g z)
-		=> (@this, y, z);
-	[MethodImpl(Inline)]
 	public static (g X, g Y, g Z, g W) Append<g>(this g @this, (g X, g Y, g Z) a)
 		=> (@this, a.X, a.Y, a.Z);
-	[MethodImpl(Inline)]
-	public static (g X, g Y, g Z, g W) Append<g>(this g @this, g y, g z, g w)
-		=> (@this, y, z, w);
 
 	[MethodImpl(Inline)]
 	public static (g X, g Y) Prepend<g>(this g @this)
@@ -31,14 +25,8 @@ public static class Extensions_g
 	public static (g X, g Y, g Z) Prepend<g>(this g @this, (g X, g Y) a)
 		=> (a.X, a.Y, @this);
 	[MethodImpl(Inline)]
-	public static (g X, g Y, g Z) Prepend<g>(this g @this, g x, g y)
-		=> (x, y, @this);
-	[MethodImpl(Inline)]
 	public static (g X, g Y, g Z, g W) Prepend<g>(this g @this, (g X, g Y, g Z) a)
 		=> (a.X, a.Y, a.Z, @this);
-	[MethodImpl(Inline)]
-	public static (g X, g Y, g Z, g W) Prepend<g>(this g @this, g x, g y, g z)
-		=> (x, y, z, @this);
 
 	[MethodImpl(Inline)]
 	private static g To1<g>(this g @this)

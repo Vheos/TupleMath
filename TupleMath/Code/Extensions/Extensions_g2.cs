@@ -11,9 +11,6 @@ public static class Extensions_g2
 	[MethodImpl(Inline)]
 	public static (g X, g Y, g Z, g W) Append<g>(this (g X, g Y) @this, (g X, g Y) a)
 		=> (@this.X, @this.Y, a.X, a.Y);
-	[MethodImpl(Inline)]
-	public static (g X, g Y, g Z, g W) Append<g>(this (g X, g Y) @this, g z, g w)
-		=> (@this.X, @this.Y, z, w);
 
 	[MethodImpl(Inline)]
 	public static (g X, g Y, g Z) Prepend<g>(this (g X, g Y) @this)
@@ -24,9 +21,6 @@ public static class Extensions_g2
 	[MethodImpl(Inline)]
 	public static (g X, g Y, g Z, g W) Prepend<g>(this (g X, g Y) @this, (g X, g Y) a)
 		=> (a.X, a.Y, @this.X, @this.Y);
-	[MethodImpl(Inline)]
-	public static (g X, g Y, g Z, g W) Prepend<g>(this (g X, g Y) @this, g x, g y)
-		=> (x, y, @this.X, @this.Y);
 
 	[MethodImpl(Inline)]
 	public static (g X, g Y) NewX<g>(this (g X, g Y) @this, g x)
