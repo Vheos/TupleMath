@@ -38,7 +38,7 @@ public static class Extensions
 
 		return attributeSyntax != null;
 	}
-	public static bool TryGetAttribute(this MemberDeclarationSyntax @this, out AttributeSyntax attributeSyntax, string attributeName) 
+	public static bool TryGetAttribute(this MemberDeclarationSyntax @this, out AttributeSyntax attributeSyntax, string attributeName)
 		=> @this.AttributeLists.TryGetAttribute(out attributeSyntax, attributeName);
 	public static IEnumerable<AttributeSyntax> GetAttributes(this MemberDeclarationSyntax @this, params string[] attributeShortNames)
 		=> @this.AttributeLists
@@ -97,7 +97,6 @@ public static class Extensions
 	public static TRoot RemoveDescendantTrivia<TRoot>(this TRoot @this)
 		where TRoot : SyntaxNode
 		=> @this.ReplaceTrivia(@this.DescendantTrivia(), (_, _) => default);
-
 
 	public static bool IsExtensionMethod(this SyntaxNode @this, CancellationToken token)
 		=> @this is MethodDeclarationSyntax method

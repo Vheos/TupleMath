@@ -2,7 +2,7 @@
 
 public enum RoundingDirection
 {
-    ToNearest,
+	ToNearest,
 	Down,
 	Up,
 	TowardsZero,

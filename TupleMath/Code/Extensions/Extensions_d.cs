@@ -121,7 +121,7 @@ public static class Extensions_d
 	public static f ToFloat(this d @this)
 		=> (f)@this;
 	[MethodImpl(Inline)]
-	static d ToDouble(this d @this)
+	private static d ToDouble(this d @this)
 		=> @this;
 
 	#endregion

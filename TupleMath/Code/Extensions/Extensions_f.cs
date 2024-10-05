@@ -244,7 +244,6 @@ public static class Extensions_f
 	#endregion
 
 	#region Conversion
-
 	[MethodImpl(Inline)]
 	public static b ToBool(this f @this)
 		=> @this > 0f;
@@ -255,7 +254,7 @@ public static class Extensions_f
 	public static l ToLong(this f @this)
 		=> (l)@this;
 	[MethodImpl(Inline)]
-	static f ToFloat(this f @this)
+	private static f ToFloat(this f @this)
 		=> @this;
 	[MethodImpl(Inline)]
 	public static d ToDouble(this f @this)

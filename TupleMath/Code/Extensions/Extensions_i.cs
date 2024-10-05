@@ -62,7 +62,7 @@ public static class Extensions_i
 	[MethodImpl(Inline), Vectorize]
 	public static i Sig(this i @this)
 		=> @this.Compare(0);
-	
+
 	[MethodImpl(Inline), Vectorize]
 	[Retype(nameof(f), RetypeTargets.Params, nameof(ToFloat), ConversionTargets.This)]
 	public static f Avg(this i @this, i a)
@@ -83,7 +83,6 @@ public static class Extensions_i
 	[Retype(nameof(f), RetypeTargets.Params, nameof(ToFloat), ConversionTargets.This)]
 	public static f MapClamp(this i @this, i a, i b, i c, i d)
 		=> Extensions_f.MapClamp(@this.ToFloat(), a.ToFloat(), b.ToFloat(), c.ToFloat(), d.ToFloat());
-	
 
 	#endregion
 
@@ -264,12 +263,13 @@ public static class Extensions_i
 	#endregion
 
 	#region Conversion
+#pragma warning disable IDE0004   // Remove unnecessary cast
 
 	[MethodImpl(Inline)]
 	public static b ToBool(this i @this)
 		=> @this > 0;
 	[MethodImpl(Inline)]
-	static i ToInt(this i @this)
+	private static i ToInt(this i @this)
 		=> @this;
 	[MethodImpl(Inline)]
 	public static l ToLong(this i @this)
@@ -281,5 +281,6 @@ public static class Extensions_i
 	public static d ToDouble(this i @this)
 		=> (d)@this;
 
+#pragma warning restore
 	#endregion
 }

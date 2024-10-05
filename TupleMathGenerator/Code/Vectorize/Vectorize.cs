@@ -1,7 +1,6 @@
 ﻿namespace TupleMathGenerator.Vectorize;
 using Microsoft.CodeAnalysis;
 using System.Collections.Immutable;
-using System.ComponentModel;
 using System.IO;
 using System.Text;
 using System.Threading;
@@ -49,7 +48,6 @@ public class VectorizeAttribute : Attribute
 				stringBuilder.AppendLine($"global using {alias}{i} = ({string.Join(", ", Pairs(type, i))});");
 
 		stringBuilder.AddAsSource(TypeAliasesFilePath, context);
-
 
 	}
 

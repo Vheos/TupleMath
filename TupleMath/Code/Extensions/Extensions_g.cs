@@ -41,7 +41,7 @@ public static class Extensions_g
 		=> (x, y, z, @this);
 
 	[MethodImpl(Inline)]
-	static g To1<g>(this g @this)
+	private static g To1<g>(this g @this)
 		=> @this;
 	[MethodImpl(Inline)]
 	public static (g X, g Y) To2<g>(this g @this)

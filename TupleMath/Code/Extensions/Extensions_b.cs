@@ -34,14 +34,20 @@ public static class Extensions_b
 	#region Conversion
 
 	[MethodImpl(Inline)]
-	static b ToBool(this b @this)
+	private static b ToBool(this b @this)
 		=> @this;
 	[MethodImpl(Inline)]
 	public static i ToInt(this b @this)
 		=> @this ? 1 : 0;
 	[MethodImpl(Inline)]
+	public static l ToLong(this b @this)
+		=> @this ? 1L : 0L;
+	[MethodImpl(Inline)]
 	public static f ToFloat(this b @this)
 		=> @this ? 1f : 0f;
+	[MethodImpl(Inline)]
+	public static d ToDouble(this b @this)
+		=> @this ? 1d : 0d;
 
 	#endregion
 }

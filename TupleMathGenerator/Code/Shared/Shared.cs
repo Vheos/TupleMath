@@ -12,7 +12,7 @@ internal class Shared : IIncrementalGenerator
 	}
 
 	// Settings
-	internal const string IgnoreAttributeShortName = "Ignore"; 
+	internal const string IgnoreAttributeShortName = "Ignore";
 	internal const string AttributesFilePath = "Attributes";
 	internal const string AttributesNamespace = $"{nameof(TupleMathGenerator)}.{AttributesFilePath}";
 	internal const string TypeAliasesFilePath = "TypeAliases";
