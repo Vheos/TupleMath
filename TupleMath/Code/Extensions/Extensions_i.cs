@@ -156,22 +156,22 @@ public static partial class Extensions_i
 
 	[MethodImpl(Inline), Vectorize]
 	public static i RoundToNearestMultiple(this i @this, i a)
-		=> Extensions_d.RoundToNearestMultiple(@this, a);
+		=> Extensions_f.RoundToNearestMultiple(@this, a);
 	[MethodImpl(Inline), Vectorize]
 	public static i RoundDownToMultiple(this i @this, i a)
-		=> Extensions_d.RoundDownToMultiple(@this, a);
+		=> Extensions_f.RoundDownToMultiple(@this, a);
 	[MethodImpl(Inline), Vectorize]
 	public static i RoundUpToMultiple(this i @this, i a)
-		=> Extensions_d.RoundUpToMultiple(@this, a);
+		=> Extensions_f.RoundUpToMultiple(@this, a);
 	[MethodImpl(Inline), Vectorize]
 	public static i RoundTowardsZeroToMultiple(this i @this, i a)
-		=> Extensions_d.RoundTowardsZeroToMultiple(@this, a);
+		=> Extensions_f.RoundTowardsZeroToMultiple(@this, a);
 	[MethodImpl(Inline), Vectorize]
 	public static i RoundAwayFromZeroToMultiple(this i @this, i a)
-		=> Extensions_d.RoundAwayFromZeroToMultiple(@this, a);
+		=> Extensions_f.RoundAwayFromZeroToMultiple(@this, a);
 	[MethodImpl(Inline), Vectorize]
 	public static i RoundToMultiple(this i @this, i a, [Ignore] RoundingDirection direction)
-		=> Extensions_d.RoundToMultiple(@this, a, direction);
+		=> Extensions_f.RoundToMultiple(@this, a, direction);
 
 	/*
 	[MethodImpl(Inline), Vectorize]
