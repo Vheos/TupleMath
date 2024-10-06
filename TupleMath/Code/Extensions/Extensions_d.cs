@@ -1,7 +1,29 @@
 ﻿namespace TupleMath;
 
-public static class Extensions_d
+public static partial class Extensions_d
 {
+	#region Arithmetic
+
+	[MethodImpl(Inline), Vectorize]
+	[Retype(nameof(i), RetypeTargets.Params, nameof(ToDouble), ConversionTargets.Params)]
+	[Retype(nameof(l), RetypeTargets.Params, nameof(ToDouble), ConversionTargets.Params)]
+	[Retype(nameof(f), RetypeTargets.Params, nameof(ToDouble), ConversionTargets.Params)]
+	[Retype(nameof(c), RetypeTargets.ReturnAndParams, nameof(ToDecimal), ConversionTargets.This)]
+	public static d Add(this d @this, d a)
+		=> @this + a;
+	[MethodImpl(Inline), Vectorize]
+	public static d Sub(this d @this, d a)
+		=> @this - a;
+	[MethodImpl(Inline), Vectorize]
+	public static d Neg(this d @this)
+		=> -@this;
+
+	[MethodImpl(Inline), Vectorize]
+	public static d Mul(this d @this, d a)
+		=> @this * a;
+	[MethodImpl(Inline), Vectorize]
+	public static d Div(this d @this, d a)
+		=> @this / a;
 	[MethodImpl(Inline), Vectorize]
 	public static d Inv(this d @this)
 		=> 1d / @this;

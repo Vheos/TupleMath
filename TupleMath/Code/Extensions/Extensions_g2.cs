@@ -1,6 +1,6 @@
 ﻿namespace TupleMath;
 
-public static class Extensions_g2
+public static partial class Extensions_g2
 {
 	[MethodImpl(Inline)]
 	public static (g X, g Y, g Z) Append<g>(this (g X, g Y) @this)

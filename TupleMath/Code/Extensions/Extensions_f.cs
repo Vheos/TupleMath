@@ -1,6 +1,6 @@
 ﻿namespace TupleMath;
 
-public static class Extensions_f
+public static partial class Extensions_f
 {
 	#region Arithmetic
 

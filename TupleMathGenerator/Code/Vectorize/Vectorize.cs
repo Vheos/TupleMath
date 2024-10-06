@@ -72,8 +72,14 @@ public class VectorizeAttribute : Attribute
 
 	private static SyntaxNode ProcessClassName(ClassDeclarationSyntax original, int leftSize, int rightSize)
 	{
-		var newName = original.Identifier + Suffix(leftSize, rightSize);
-		return original.WithIdentifier(SyntaxFactory.Identifier(newName));
+		var newNode = original;
+		if (!original.IsPartial())
+		{
+			var newName = original.Identifier + Suffix(leftSize, rightSize);
+			newNode = newNode.WithIdentifier(SyntaxFactory.Identifier(newName));
+		}
+
+		return newNode;
 	}
 	private static SyntaxNode ResizeType(SyntaxNode original, int size)
 	{

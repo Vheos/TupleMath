@@ -117,8 +117,14 @@ public enum ConversionTargets
 	}
 	private static ClassDeclarationSyntax ProcessClass(ClassDeclarationSyntax original, string type)
 	{
-		var newName = original.Identifier + Suffix(type);
-		return original.WithIdentifier(SyntaxFactory.Identifier(newName));
+		var newNode = original;
+		if (!original.IsPartial())
+		{
+			var newName = original.Identifier + Suffix(type);
+			newNode = newNode.WithIdentifier(SyntaxFactory.Identifier(newName));
+		}
+
+		return newNode;
 	}
 	private static MethodDeclarationSyntax ProcessMethod(MethodDeclarationSyntax original, IReadOnlyDictionary<MethodSignature, RetypeDto> dtosLookup)
 	{

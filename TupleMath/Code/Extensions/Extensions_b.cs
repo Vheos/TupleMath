@@ -1,7 +1,7 @@
 ﻿
 namespace TupleMath;
 
-public static class Extensions_b
+public static partial class Extensions_b
 {
 	#region Gates
 

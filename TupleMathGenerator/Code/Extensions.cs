@@ -89,6 +89,8 @@ public static class Extensions
 
 		return null;
 	}
+	public static bool IsPartial(this ClassDeclarationSyntax @this)
+		=> @this.Modifiers.Any(modifier => modifier.IsKind(SyntaxKind.PartialKeyword));
 
 	public static TRoot ReplaceDescendantNodes<TRoot, TNode>(this TRoot @this, Func<TNode, TNode> selector)
 		where TRoot : SyntaxNode
