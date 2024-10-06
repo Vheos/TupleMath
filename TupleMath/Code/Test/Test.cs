@@ -1,4 +1,5 @@
-﻿namespace TupleMath.Test;
+﻿#if DEBUG
+namespace TupleMath.Test;
 
 using System;
 
@@ -321,3 +322,4 @@ internal static class Test
 			throw new($"Value comparison failed!\nType: {typeof(T).Name}\nValue A: {a}\nValue B: {b}");
 	}
 }
+#endif

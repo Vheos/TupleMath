@@ -3,5 +3,9 @@
 public static partial class EntryPoint
 {
 	private static void Main()
-		=> Test.Test.Run();
+	{
+#if DEBUG
+		Test.Test.Run();
+#endif
+	}
 }
