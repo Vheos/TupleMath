@@ -4,7 +4,7 @@ using System.IO;
 using System.Threading;
 using TupleMathGenerator.Shared;
 
-public static class Extensions
+internal static class Extensions
 {
 	public static T GetConstructorParameter<T>(this AttributeData @this, int index)
 		=> index >= 0 && index < @this.ConstructorArguments.Length
@@ -100,7 +100,7 @@ public static class Extensions
 		where TRoot : SyntaxNode
 		=> @this.ReplaceTrivia(@this.DescendantTrivia(), (_, _) => default);
 
-	public static bool IsExtensionMethod(this SyntaxNode @this, CancellationToken token)
+	public static bool IsExtensionMethod(this SyntaxNode @this, CancellationToken _)
 		=> @this is MethodDeclarationSyntax method
 		&& method.ParameterList.Parameters.Count > 0
 		&& method.ParameterList.Parameters[0].Modifiers.Any(modifier => modifier.IsKind(SyntaxKind.ThisKeyword));

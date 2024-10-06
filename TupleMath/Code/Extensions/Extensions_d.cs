@@ -41,6 +41,8 @@ public static partial class Extensions_d
 	public static d Sqrd(this d @this)
 		=> @this * @this;
 
+	#endregion
+
 	#region Round
 
 	[MethodImpl(Inline), Vectorize]

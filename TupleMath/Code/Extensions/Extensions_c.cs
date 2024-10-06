@@ -44,7 +44,6 @@ public static partial class Extensions_c
 	#endregion
 
 	#region Conversion
-#pragma warning disable IDE0004   // Remove unnecessary cast
 
 	[MethodImpl(Inline), Vectorize]
 	public static b ToBool(this c @this)
@@ -64,6 +63,5 @@ public static partial class Extensions_c
 	private static c ToDecimal(this c @this)
 		=> @this;
 
-#pragma warning restore
 	#endregion
 }
