@@ -5,35 +5,42 @@ public static partial class Extensions_i
 	#region Arithmetic
 
 	[MethodImpl(Inline), Vectorize]
+	[Retype(nameof(l), RetypeTargets.ReturnAndParams, nameof(ToLong), ConversionTargets.This)]
 	[Retype(nameof(f), RetypeTargets.ReturnAndParams, nameof(ToFloat), ConversionTargets.This)]
+	[Retype(nameof(d), RetypeTargets.ReturnAndParams, nameof(ToDouble), ConversionTargets.This)]
+	[Retype(nameof(c), RetypeTargets.ReturnAndParams, nameof(ToDecimal), ConversionTargets.This)]
 	public static i Add(this i @this, i a)
 		=> @this + a;
+
 	[MethodImpl(Inline), Vectorize]
-	[Retype(nameof(f), RetypeTargets.ReturnAndParams, nameof(ToFloat), ConversionTargets.This)]
 	public static i Sub(this i @this, i a)
 		=> @this - a;
+
 	[MethodImpl(Inline), Vectorize]
 	public static i Neg(this i @this)
 		=> -@this;
 
 	[MethodImpl(Inline), Vectorize]
-	[Retype(nameof(f), RetypeTargets.ReturnAndParams, nameof(ToFloat), ConversionTargets.This)]
 	public static i Mul(this i @this, i a)
 		=> @this * a;
+
 	[MethodImpl(Inline), Vectorize]
 	[Retype(nameof(f), RetypeTargets.ReturnAndParams, nameof(ToFloat), ConversionTargets.This)]
-	public static i Div(this i @this, i a)
-		=> @this / a;
+	[Retype(nameof(d), RetypeTargets.ReturnAndParams, nameof(ToDouble), ConversionTargets.This)]
+	public static f Div(this i @this, i a)
+		=> Extensions_f.Div(@this.ToFloat(), a.ToFloat());
+	[MethodImpl(Inline), Vectorize]
+	public static d Div(this i @this, l a)
+		=> Extensions_d.Div(@this.ToDouble(), a.ToDouble());
+
 	[MethodImpl(Inline), Vectorize]
 	public static f Inv(this i @this)
 		=> Extensions_f.Inv(@this.ToFloat());
 
 	[MethodImpl(Inline), Vectorize]
-	[Retype(nameof(f), RetypeTargets.ReturnAndParams, nameof(ToFloat), ConversionTargets.This)]
 	public static f Pow(this i @this, i a)
 		=> Extensions_f.Pow(@this.ToFloat(), a.ToFloat());
 	[MethodImpl(Inline), Vectorize]
-	[Retype(nameof(f), RetypeTargets.ReturnAndParams, nameof(ToFloat), ConversionTargets.This)]
 	public static f Root(this i @this, i a)
 		=> Extensions_f.Root(@this.ToFloat(), a.ToFloat());
 	[MethodImpl(Inline), Vectorize]
@@ -44,15 +51,12 @@ public static partial class Extensions_i
 		=> Extensions_f.Sqrt(@this.ToFloat());
 
 	[MethodImpl(Inline), Vectorize]
-	[Retype(nameof(f), RetypeTargets.ReturnAndParams, nameof(ToFloat), ConversionTargets.This)]
 	public static i Rem(this i @this, i a)
 		=> @this % a;
 	[MethodImpl(Inline), Vectorize]
-	[Retype(nameof(f), RetypeTargets.ReturnAndParams, nameof(ToFloat), ConversionTargets.This)]
 	public static i ModEuclid(this i @this, i a)
 		=> @this - a.Abs() * (@this.ToFloat() / a.Abs()).RoundDown();
 	[MethodImpl(Inline), Vectorize]
-	[Retype(nameof(f), RetypeTargets.ReturnAndParams, nameof(ToFloat), ConversionTargets.This)]
 	public static i ModRound(this i @this, i a)
 		=> @this - a * (@this.ToFloat() / a).RoundToNearest();
 
@@ -64,23 +68,18 @@ public static partial class Extensions_i
 		=> @this.Compare(0);
 
 	[MethodImpl(Inline), Vectorize]
-	[Retype(nameof(f), RetypeTargets.Params, nameof(ToFloat), ConversionTargets.This)]
 	public static f Avg(this i @this, i a)
 		=> Extensions_f.Avg(@this.ToFloat(), a.ToFloat());
 	[MethodImpl(Inline), Vectorize]
-	[Retype(nameof(f), RetypeTargets.Params, nameof(ToFloat), ConversionTargets.This)]
 	public static f Lerp(this i @this, i a, [Ignore] f alpha)
 		=> Extensions_f.Lerp(@this.ToFloat(), a.ToFloat(), alpha);
 	[MethodImpl(Inline), Vectorize]
-	[Retype(nameof(f), RetypeTargets.Params, nameof(ToFloat), ConversionTargets.This)]
 	public static f LerpClamp(this i @this, i a, [Ignore] f alpha)
 		=> Extensions_f.LerpClamp(@this.ToFloat(), a.ToFloat(), alpha);
 	[MethodImpl(Inline), Vectorize]
-	[Retype(nameof(f), RetypeTargets.Params, nameof(ToFloat), ConversionTargets.This)]
 	public static f Map(this i @this, i a, i b, i c, i d)
 		=> Extensions_f.Map(@this.ToFloat(), a.ToFloat(), b.ToFloat(), c.ToFloat(), d.ToFloat());
 	[MethodImpl(Inline), Vectorize]
-	[Retype(nameof(f), RetypeTargets.Params, nameof(ToFloat), ConversionTargets.This)]
 	public static f MapClamp(this i @this, i a, i b, i c, i d)
 		=> Extensions_f.MapClamp(@this.ToFloat(), a.ToFloat(), b.ToFloat(), c.ToFloat(), d.ToFloat());
 
@@ -89,31 +88,24 @@ public static partial class Extensions_i
 	#region Comparisons
 
 	[MethodImpl(Inline), Vectorize]
-	[Retype(nameof(f), RetypeTargets.Params, nameof(ToFloat), ConversionTargets.This)]
 	public static b IsEqual(this i @this, i a)
 		=> @this == a;
 	[MethodImpl(Inline), Vectorize]
-	[Retype(nameof(f), RetypeTargets.Params, nameof(ToFloat), ConversionTargets.This)]
 	public static b IsGreater(this i @this, i a)
 		=> @this > a;
 	[MethodImpl(Inline), Vectorize]
-	[Retype(nameof(f), RetypeTargets.Params, nameof(ToFloat), ConversionTargets.This)]
 	public static b IsGreaterOrEqual(this i @this, i a)
 		=> @this >= a;
 	[MethodImpl(Inline), Vectorize]
-	[Retype(nameof(f), RetypeTargets.Params, nameof(ToFloat), ConversionTargets.This)]
 	public static b IsLess(this i @this, i a)
 		=> @this < a;
 	[MethodImpl(Inline), Vectorize]
-	[Retype(nameof(f), RetypeTargets.Params, nameof(ToFloat), ConversionTargets.This)]
 	public static b IsLessOrEqual(this i @this, i a)
 		=> @this <= a;
 	[MethodImpl(Inline), Vectorize]
-	[Retype(nameof(f), RetypeTargets.Params, nameof(ToFloat), ConversionTargets.This)]
 	public static b IsBetween(this i @this, i a, i b)
 		=> @this >= a && @this <= b;
 	[MethodImpl(Inline), Vectorize]
-	[Retype(nameof(f), RetypeTargets.Params, nameof(ToFloat), ConversionTargets.This)]
 	public static i Compare(this i @this, i a)
 		=> @this > a ? +1 : @this < a ? -1 : 0;
 
