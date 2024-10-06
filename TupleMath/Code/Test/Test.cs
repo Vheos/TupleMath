@@ -4,33 +4,39 @@ using System;
 
 internal static class Test
 {
-	private static readonly b b = true;
+	#region Const
+
+	private const b b = true;
 	private static readonly b2 b2 = b.ToSame2();
 	private static readonly b3 b3 = b.ToSame3();
 	private static readonly b4 b4 = b.ToSame4();
-	private static readonly i i = 1;
+	private const i i = 1;
 	private static readonly i2 i2 = i.ToSame2();
 	private static readonly i3 i3 = i.ToSame3();
 	private static readonly i4 i4 = i.ToSame4();
-	private static readonly l l = 1L;
+	private const l l = 1L;
 	private static readonly l2 l2 = l.ToSame2();
 	private static readonly l3 l3 = l.ToSame3();
 	private static readonly l4 l4 = l.ToSame4();
-	private static readonly f f = 1f;
+	private const f f = 1f;
 	private static readonly f2 f2 = f.ToSame2();
 	private static readonly f3 f3 = f.ToSame3();
 	private static readonly f4 f4 = f.ToSame4();
-	private static readonly d d = 1d;
+	private const d d = 1d;
 	private static readonly d2 d2 = d.ToSame2();
 	private static readonly d3 d3 = d.ToSame3();
 	private static readonly d4 d4 = d.ToSame4();
-	private static readonly c c = 1m;
+	private const c c = 1m;
 	private static readonly c2 c2 = c.ToSame2();
 	private static readonly c3 c3 = c.ToSame3();
 	private static readonly c4 c4 = c.ToSame4();
 
+	#endregion
+
 	public static void Run()
 	{
+		#region Assert Consts
+
 		Assert(b, true);
 		Assert(b2, (true, true));
 		Assert(b3, (true, true, true));
@@ -60,6 +66,9 @@ internal static class Test
 		Assert(c2, (1m, 1m));
 		Assert(c3, (1m, 1m, 1m));
 		Assert(c4, (1m, 1m, 1m, 1m));
+
+		#endregion
+
 
 		#region i <> ...
 
@@ -113,6 +122,11 @@ internal static class Test
 		Assert(l.Add(d2), (2d, 1d));
 		Assert(l.Add(d3), (2d, 1d, 1d));
 		Assert(l.Add(d4), (2d, 1d, 1d, 1d));
+		// c
+		Assert(l.Add(c), 2m);
+		Assert(l.Add(c2), (2m, 1m));
+		Assert(l.Add(c3), (2m, 1m, 1m));
+		Assert(l.Add(c4), (2m, 1m, 1m, 1m));
 
 		#endregion
 
@@ -139,6 +153,11 @@ internal static class Test
 		Assert(f.Add(d2), (2d, 1d));
 		Assert(f.Add(d3), (2d, 1d, 1d));
 		Assert(f.Add(d4), (2d, 1d, 1d, 1d));
+		// c
+		Assert(f.Add(c), 2m);
+		Assert(f.Add(c2), (2m, 1m));
+		Assert(f.Add(c3), (2m, 1m, 1m));
+		Assert(f.Add(c4), (2m, 1m, 1m, 1m));
 
 		#endregion
 
@@ -164,6 +183,133 @@ internal static class Test
 		Assert(d.Add(d2), (2d, 1d));
 		Assert(d.Add(d3), (2d, 1d, 1d));
 		Assert(d.Add(d4), (2d, 1d, 1d, 1d));
+		// c
+		Assert(d.Add(c), 2m);
+		Assert(d.Add(c2), (2m, 1m));
+		Assert(d.Add(c3), (2m, 1m, 1m));
+		Assert(d.Add(c4), (2m, 1m, 1m, 1m));
+
+		#endregion
+
+
+		#region i2 <> ...
+
+		// i
+		Assert(i2.Add(i), (2, 1));
+		Assert(i2.Add(i2), (2, 2));
+		Assert(i2.Add(i3), (2, 2, 1));
+		Assert(i2.Add(i4), (2, 2, 1, 1));
+		// l
+		Assert(i2.Add(l), (2L, 1L));
+		Assert(i2.Add(l2), (2L, 2L));
+		Assert(i2.Add(l3), (2L, 2L, 1L));
+		Assert(i2.Add(l4), (2L, 2L, 1L, 1L));
+		// f
+		Assert(i2.Add(f), (2f, 1f));
+		Assert(i2.Add(f2), (2f, 2f));
+		Assert(i2.Add(f3), (2f, 2f, 1f));
+		Assert(i2.Add(f4), (2f, 2f, 1f, 1f));
+		// d
+		Assert(i2.Add(d), (2d, 1d));
+		Assert(i2.Add(d2), (2d, 2d));
+		Assert(i2.Add(d3), (2d, 2d, 1d));
+		Assert(i2.Add(d4), (2d, 2d, 1d, 1d));
+		// c
+		Assert(i2.Add(c), (2m, 1m));
+		Assert(i2.Add(c2), (2m, 2m));
+		Assert(i2.Add(c3), (2m, 2m, 1m));
+		Assert(i2.Add(c4), (2m, 2m, 1m, 1m));
+
+		#endregion
+
+		#region l2 <> ...
+
+		// i
+		Assert(l2.Add(i), (2L, 1L));
+		Assert(l2.Add(i2), (2L, 2L));
+		Assert(l2.Add(i3), (2L, 2L, 1L));
+		Assert(l2.Add(i4), (2L, 2L, 1L, 1L));
+		// l
+		Assert(l2.Add(l), (2L, 1L));
+		Assert(l2.Add(l2), (2L, 2L));
+		Assert(l2.Add(l3), (2L, 2L, 1L));
+		Assert(l2.Add(l4), (2L, 2L, 1L, 1L));
+		// f
+		Assert(l2.Add(f), (2f, 1f));
+		Assert(l2.Add(f2), (2f, 2f));
+		Assert(l2.Add(f3), (2f, 2f, 1f));
+		Assert(l2.Add(f4), (2f, 2f, 1f, 1f));
+		// d
+		Assert(l2.Add(d), (2d, 1d));
+		Assert(l2.Add(d2), (2d, 2d));
+		Assert(l2.Add(d3), (2d, 2d, 1d));
+		Assert(l2.Add(d4), (2d, 2d, 1d, 1d));
+		// c
+		Assert(l2.Add(c), (2m, 1m));
+		Assert(l2.Add(c2), (2m, 2m));
+		Assert(l2.Add(c3), (2m, 2m, 1m));
+		Assert(l2.Add(c4), (2m, 2m, 1m, 1m));
+
+		#endregion
+
+		#region f2 <> ...
+
+		// i
+		Assert(f2.Add(i), (2f, 1f));
+		Assert(f2.Add(i2), (2f, 2f));
+		Assert(f2.Add(i3), (2f, 2f, 1f));
+		Assert(f2.Add(i3), (2f, 2f, 1f));
+		Assert(f2.Add(i4), (2f, 2f, 1f, 1f));
+		// l
+		Assert(f2.Add(l), (2f, 1f));
+		Assert(f2.Add(l2), (2f, 2f));
+		Assert(f2.Add(l3), (2f, 2f, 1f));
+		Assert(f2.Add(l4), (2f, 2f, 1f, 1f));
+		// f
+		Assert(f2.Add(f), (2f, 1f));
+		Assert(f2.Add(f2), (2f, 2f));
+		Assert(f2.Add(f3), (2f, 2f, 1f));
+		Assert(f2.Add(f4), (2f, 2f, 1f, 1f));
+		// d
+		Assert(f2.Add(d), (2d, 1d));
+		Assert(f2.Add(d2), (2d, 2d));
+		Assert(f2.Add(d3), (2d, 2d, 1d));
+		Assert(f2.Add(d4), (2d, 2d, 1d, 1d));
+		// c
+		Assert(f2.Add(c), (2m, 1m));
+		Assert(f2.Add(c2), (2m, 2m));
+		Assert(f2.Add(c3), (2m, 2m, 1m));
+		Assert(f2.Add(c4), (2m, 2m, 1m, 1m));
+
+		#endregion
+
+		#region d2 <> ...
+
+		// i
+		Assert(d2.Add(i), (2d, 1d));
+		Assert(d2.Add(i2), (2d, 2d));
+		Assert(d2.Add(i3), (2d, 2d, 1d));
+		Assert(d2.Add(i4), (2d, 2d, 1d, 1d));
+		// l
+		Assert(d2.Add(l), (2d, 1d));
+		Assert(d2.Add(l2), (2d, 2d));
+		Assert(d2.Add(l3), (2d, 2d, 1d));
+		Assert(d2.Add(l4), (2d, 2d, 1d, 1d));
+		// f
+		Assert(d2.Add(f), (2d, 1d));
+		Assert(d2.Add(f2), (2d, 2d));
+		Assert(d2.Add(f3), (2d, 2d, 1d));
+		Assert(d2.Add(f4), (2d, 2d, 1d, 1d));
+		// d
+		Assert(d2.Add(d), (2d, 1d));
+		Assert(d2.Add(d2), (2d, 2d));
+		Assert(d2.Add(d3), (2d, 2d, 1d));
+		Assert(d2.Add(d4), (2d, 2d, 1d, 1d));
+		// c
+		Assert(d2.Add(c), (2m, 1m));
+		Assert(d2.Add(c2), (2m, 2m));
+		Assert(d2.Add(c3), (2m, 2m, 1m));
+		Assert(d2.Add(c4), (2m, 2m, 1m, 1m));
 
 		#endregion
 	}
