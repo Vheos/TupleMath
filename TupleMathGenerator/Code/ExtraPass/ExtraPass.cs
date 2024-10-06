@@ -10,8 +10,6 @@ public class ExtraPass : IIncrementalGenerator
 {
 	public void Initialize(IncrementalGeneratorInitializationContext context)
 	{
-		return;
-
 		// Vectorize retyped methods
 		var retypedMethodsToVectorize = context.AdditionalTextsProvider
 			.Where(file => Path.GetFileNameWithoutExtension(file.Path).Contains(nameof(Retype)))
