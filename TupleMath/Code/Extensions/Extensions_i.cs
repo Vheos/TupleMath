@@ -267,7 +267,7 @@ public static partial class Extensions_i
 
 	[MethodImpl(Inline), Vectorize]
 	public static b ToBool(this i @this)
-		=> @this > 0;
+		=> @this >= 1;
 	private static i ToInt(this i @this)
 		=> @this;
 	[MethodImpl(Inline), Vectorize]

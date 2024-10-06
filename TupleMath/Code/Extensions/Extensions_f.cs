@@ -246,7 +246,7 @@ public static partial class Extensions_f
 	#region Conversion
 	[MethodImpl(Inline), Vectorize]
 	public static b ToBool(this f @this)
-		=> @this > 0f;
+		=> @this >= 1f;
 	[MethodImpl(Inline), Vectorize]
 	public static i ToInt(this f @this)
 		=> (i)@this;
