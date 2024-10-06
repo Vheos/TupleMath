@@ -144,6 +144,9 @@ public static partial class Extensions_d
 		=> (f)@this;
 	private static d ToDouble(this d @this)
 		=> @this;
+	[MethodImpl(Inline), Vectorize]
+	public static c ToDecimal(this d @this)
+		=> (c)@this;
 
 	#endregion
 }

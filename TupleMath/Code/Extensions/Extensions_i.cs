@@ -279,6 +279,9 @@ public static partial class Extensions_i
 	[MethodImpl(Inline), Vectorize]
 	public static d ToDouble(this i @this)
 		=> (d)@this;
+	[MethodImpl(Inline), Vectorize]
+	public static c ToDecimal(this i @this)
+		=> (c)@this;
 
 #pragma warning restore
 	#endregion

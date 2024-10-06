@@ -53,6 +53,9 @@ public static partial class Extensions_b
 	[MethodImpl(Inline), Vectorize]
 	public static d ToDouble(this b @this)
 		=> @this ? 1d : 0d;
+	[MethodImpl(Inline), Vectorize]
+	public static c ToDecimal(this b @this)
+		=> @this ? 1m : 0m;
 
 	#endregion
 }

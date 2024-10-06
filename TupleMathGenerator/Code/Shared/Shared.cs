@@ -23,6 +23,7 @@ internal class Shared : IIncrementalGenerator
 		{ "l", typeof(long) },
 		{ "f", typeof(float) },
 		{ "d", typeof(double) },
+		{ "c", typeof(decimal) },
 	};
 	internal static string GetAttributeMetadataName(string attributeShortName)
 		=> $"{AttributesNamespace}.{attributeShortName}Attribute";
