@@ -29,9 +29,6 @@ public static partial class Extensions_g
 		=> (a.X, a.Y, a.Z, @this);
 
 	[MethodImpl(Inline)]
-	private static g To1<g>(this g @this)
-		=> @this;
-	[MethodImpl(Inline)]
 	public static (g X, g Y) To2<g>(this g @this)
 		=> (@this, default);
 	[MethodImpl(Inline)]

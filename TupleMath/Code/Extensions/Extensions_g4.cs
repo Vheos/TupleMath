@@ -24,9 +24,6 @@ public static class Extensions_g4
 	[MethodImpl(Inline)]
 	public static (g X, g Y, g Z) To3<g>(this (g X, g Y, g Z, g W) @this)
 		=> (@this.X, @this.Y, @this.Z);
-	[MethodImpl(Inline)]
-	private static (g X, g Y, g Z, g W) To4<g>(this (g X, g Y, g Z, g W) @this)
-		=> @this;
 
 	#region Components
 
